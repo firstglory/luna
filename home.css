@@ -1,0 +1,20 @@
+html, body {
+    background-color: #777777;
+    padding: 0px;
+    border: 0px;
+    margin: 0px;
+    height: 100%;
+}
+
+.sidebar {
+    background-color: #0099ff;
+    height: 100%;
+    width: 400px;
+    float: left;
+}
+
+.playground {
+    background-color: #ffffff;
+    height: 100%;
+}
+    
