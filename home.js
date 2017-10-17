@@ -8,7 +8,22 @@ function init(){
         ntext = document.createTextNode(lines[i]);
         nblock.setAttribute("class", "demoblock");
         nblock.appendChild(ntext);
+        setCopy(nblock);
         sidebar.appendChild(nblock);
+    }
+}
+
+function setCopy(nblock){
+    nblock.onmousedown = dragCopy;
+
+    function dragCopy(e){
+        var block, text;
+        block = document.createElement("div");
+        text = document.createTextNode(nblock.innerText);
+        block.setAttribute("class", "block");
+        block.appendChild(text);
+        setDrag(block);
+        document.body.appendChild(block);
     }
 }
 
