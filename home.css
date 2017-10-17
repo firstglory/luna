@@ -4,8 +4,11 @@ html, body {
     border: 0px;
     margin: 0px;
     height: 100%;
-    font-size: 24px;
-    font-family: Consolas, Inconsolata, monospace;
+    font-size: 16px;
+    // font-family: Consolas, Inconsolata, monospace;
+    font-family: Helvetica, Arial, sans-serif;
+    user-select: none;
+    overflow: hidden;
 }
 
 .sidebar {
@@ -13,6 +16,7 @@ html, body {
     height: 100%;
     width: 400px;
     float: left;
+    overflow-y: scroll;
 }
 
 .playground {
@@ -20,13 +24,34 @@ html, body {
     height: 100%;
 }
     
+.demoblock {
+    background-color: #0099ff;
+    color: white;
+    // height: 160px;
+    width: 160px;
+    padding: 20px;
+    margin: 20px;
+    top: 100px;
+    left: 200px;
+}
+
 .block {
     position: absolute;
     background-color: #0099ff;
     color: white;
-    height: 360px;
-    width: 360px;
+    // height: 160px;
+    width: 160px;
     padding: 20px;
     top: 100px;
     left: 200px;
+}
+
+.sidebar::-webkit-scrollbar {
+    background-color: #888888;
+    width: 8px;
+}
+
+.sidebar::-webkit-scrollbar-thumb {
+    background-color: #eeeeee;
+    width: 8px;
 }
