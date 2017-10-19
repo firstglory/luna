@@ -22,13 +22,21 @@ function setCopy(nblock){
         text = document.createTextNode(nblock.innerText);
         block.setAttribute("class", "block");
         block.appendChild(text);
-        setDrag(block);
+        setDrag(block, true, e, nblock);
         document.body.appendChild(block);
     }
 }
 
-function setDrag(block){
+function setDrag(block, already, parentevent, parent){
     block.onmousedown = dragMouseDown;
+
+    if(already){
+//        alert(parent.clientX + ',' + parent.clientY);
+        console.log(parent.offsetLeft + ',' + parent.offsetTop);
+        block.style.left = parent.offsetLeft + "px";
+        block.style.top = parent.offsetTop + "px";
+        dragMouseDown(parentevent);
+    }
 
     function dragMouseDown(e){
         xstart = e.clientX;
