@@ -31,10 +31,8 @@ function setDrag(block, already, parentevent, parent){
     block.onmousedown = dragMouseDown;
 
     if(already){
-//        alert(parent.clientX + ',' + parent.clientY);
-        console.log(parent.offsetLeft + ',' + parent.offsetTop);
-        block.style.left = parent.offsetLeft + "px";
-        block.style.top = parent.offsetTop + "px";
+        block.style.left = parent.getBoundingClientRect().x + "px";
+        block.style.top = parent.getBoundingClientRect().y + "px";
         dragMouseDown(parentevent);
     }
 
